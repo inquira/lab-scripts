@@ -11,20 +11,20 @@ cat << 'EOF' > /etc/gdm3/PostLogin/Default
 #!/bin/bash
 
 # (DESATIVADO) Apaga e recria diretório do usuário, e restaura senha
-if [[ "$USER" == "$REGULAR_USER" ]]; then
+#if [[ "$USER" == "$REGULAR_USER" ]]; then
     #rm -rf /home/$USER
     #cp -r /etc/skel /home/$USER
     #chown -R $USER:$USER /home/$USER
     #echo "$REGULAR_USER:$REGULAR_PASSWORD" | chpasswd
-fi
+#fi
 
-exit 0
+#exit 0
 EOF
 
 chmod a+x /etc/gdm3/PostLogin/Default
 echo '' > /etc/gdm3/PostSession/Default
 
-sudo systemctl restart gdm3
+#sudo systemctl restart gdm3
 
 ##########################
 # Instalação de pacotes
@@ -33,4 +33,4 @@ sudo systemctl restart gdm3
 sudo apt install -y guvcview
 sudo snap install godot-4
 
-exit 0
+#exit 0
